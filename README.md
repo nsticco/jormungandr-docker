@@ -1,4 +1,24 @@
 # jormungandr-docker
-Dockerfiles to run a Jormungandr node on the Shelley testnet for Cardano
+This repo will provide Dockerfiles to help run a Jormungandr node on the Shelley testnet (of the Cardano blockchain).
 
-CURRENTLY INCOMPLETE
+Currently, the Dockerfile provides a quick and easy way to run a private BFT quick-start node with a default configuration.
+
+## Instructions
+Clone and build by running these commands:
+```bash
+git clone https://github.com/nsticco/jormungandr-docker.git
+cd jormungandr-docker
+docker build -t jor .
+```
+Launch in detached mode with:
+```bash
+docker run -d jor
+```
+Tail logs with:
+```bash
+docker logs -f <container_ID>
+```
+Interactively test commands with:
+```bash
+docker exec -it <container_ID> bash
+```
