@@ -14,6 +14,10 @@ Launch in detached mode with:
 ```bash
 docker run -d jor
 ```
+See active containers and find container IDs with:
+```bash
+docker ps
+```
 Tail logs with:
 ```bash
 docker logs -f <container_ID>
