@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to AWS ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_REGION)
+  build:
+    commands:
+      - echo Build started on `date`
+      - docker build -t jormungandr:latest .
+      - docker tag jormungandr:latest $ECR_URI/jormungandr:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images to ECR...
+      - docker push $ECR_URI/jormungandr:latest
