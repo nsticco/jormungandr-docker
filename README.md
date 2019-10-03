@@ -8,11 +8,11 @@ Clone and build by running these commands:
 ```bash
 git clone https://github.com/nsticco/jormungandr-docker.git
 cd jormungandr-docker
-docker build -t jor .
+docker build -t jormungandr .
 ```
 Launch in detached mode with:
 ```bash
-docker run -d jor
+docker run -d jormungandr
 ```
 See active containers and find container IDs with:
 ```bash
